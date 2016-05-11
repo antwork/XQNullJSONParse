@@ -13,7 +13,7 @@
 - (NSDictionary *)xqRemoveNull {
     NSMutableDictionary *opDict = [NSMutableDictionary dictionaryWithDictionary:self];
     
-    NSDictionary *dict = (NSDictionary *)[opDict xqRemoveNull];
+    NSDictionary *dict = [[opDict xqRemoveNull] copy];
     
     return dict;
 }
@@ -75,7 +75,7 @@
         return nil;
     }
     
-    return results;
+    return [results copy];
 }
 
 @end
